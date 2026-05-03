@@ -8,6 +8,8 @@
     "shared"
   ],
   "scripts": {
+    "bootstrap": "node scripts/bootstrap.mjs",
+    "postinstall": "node scripts/bootstrap.mjs",
     "create-project": "node scripts/create-project.mjs",
     "dev:be": "pnpm run dev --workspace=backend",
     "dev:fe": "pnpm run dev --workspace=frontend",
