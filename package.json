@@ -1,0 +1,20 @@
+{
+  "name": "monorepo-template",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "shared"
+  ],
+  "scripts": {
+    "create-project": "node scripts/create-project.mjs",
+    "dev:be": "pnpm run dev --workspace=backend",
+    "dev:fe": "pnpm run dev --workspace=frontend",
+    "dev": "concurrently --names \"BACKEND,FRONTEND\" -c \"bgBlue.bold,bgGreen.bold\" \"cd backend && pnpm run dev\" \"cd frontend && pnpm run dev\"",
+    "build": "pnpm run build --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
